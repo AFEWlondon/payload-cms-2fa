@@ -19,7 +19,6 @@ authRouter.post("/tfa/generate", async (req: PayloadRequest, res) => {
 });
 
 authRouter.post("/tfa/verify", async (req: PayloadRequest, res) => {
-  console.log("trying", req.body);
   try {
     const response = await postVerifyTFAToken(req, res);
     res.send(response).status(200);

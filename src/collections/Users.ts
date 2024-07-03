@@ -1,10 +1,8 @@
 import { CollectionConfig } from "payload/types";
 import GoogleAuthenticator from "passport-2fa-totp";
 
-// console.log();
 const Users: CollectionConfig = {
   slug: "users",
-  // auth: true,
   auth: true,
   admin: {
     useAsTitle: "email",

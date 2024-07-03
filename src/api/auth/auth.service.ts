@@ -11,7 +11,6 @@ const generateRandomBase32 = () => {
 };
 
 const postGenerateOTPToken = async (req: PayloadRequest, res) => {
-  console.log("postGenerateOTPToken");
   const user = await payload.findByID({
     collection: "users",
     id: req.user.id,
@@ -56,8 +55,6 @@ const postGenerateOTPToken = async (req: PayloadRequest, res) => {
 };
 
 const postVerifyTFAToken = async (req: PayloadRequest, res) => {
-  console.log("postVerifyTFAToken");
-
   const { code }: { code?: string } = req.body;
 
   if (!code) {
@@ -85,10 +82,7 @@ const postVerifyTFAToken = async (req: PayloadRequest, res) => {
   let delta = totp.validate({ token: code });
 
   if (delta === null) {
-    console.log("noooope");
     throw new Error("Invalid code");
-  } else {
-    console.log("yep");
   }
 
   const updatedUser = await payload.update({
@@ -106,7 +100,6 @@ const postVerifyTFAToken = async (req: PayloadRequest, res) => {
 };
 
 const postValidateTFAToken = async (req: PayloadRequest, res) => {
-  console.log("postValidateTFAToken");
   const { code }: { code?: string } = req.body;
 
   if (!code) {

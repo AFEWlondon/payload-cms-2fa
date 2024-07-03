@@ -11,7 +11,6 @@ const TFAProvider: React.FC<TFAProviderProps> = (props) => {
   const { token, user } = useAuth<User>();
 
   useEffect(() => {
-    console.log("TFAProvider");
     if (user && window.location.pathname !== "/admin/tfa") {
       if (
         !user.otp?.otpVerified ||

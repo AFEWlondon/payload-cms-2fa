@@ -12,7 +12,6 @@ interface GetOTPResponse {
 }
 
 const getOTP = async (token: string): Promise<GetOTPResponse> => {
-  console.log("getOTP");
   const res = await fetch("/api/v1/auth/tfa/generate", {
     method: "POST",
     headers: {
@@ -23,7 +22,6 @@ const getOTP = async (token: string): Promise<GetOTPResponse> => {
 };
 
 const verifyOTP = async (code: string, token: string) => {
-  console.log("verifyOTP");
   const res = await fetch("/api/v1/auth/tfa/verify", {
     method: "POST",
     headers: {
@@ -37,7 +35,6 @@ const verifyOTP = async (code: string, token: string) => {
 };
 
 const validateOTP = async (code: string, token: string) => {
-  console.log("validateOTP");
   const res = await fetch("/api/v1/auth/tfa/validate", {
     method: "POST",
     headers: {
@@ -65,7 +62,6 @@ const TFAPage = () => {
 
   const sendVerify = async () => {
     const res = await verifyOTP(code, token);
-    console.log("res", res);
     if (!res.error) return (window.location.href = "/admin");
     setInvalidCode(true);
   };
