@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useAuth } from "payload/components/utilities";
 import { User } from "payload/generated-types";
 import { checkOTPExpiration } from "./checkOtPExpiration";
+import "./styles.css";
 
 interface TFAProviderProps {
   children: React.ReactNode;
@@ -21,7 +22,7 @@ const TFAProvider: React.FC<TFAProviderProps> = (props) => {
       }
     }
   }, [token, user]);
-  return <main>{props.children}</main>;
+  return <main className="page">{props.children}</main>;
 };
 
 export default TFAProvider;
