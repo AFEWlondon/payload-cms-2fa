@@ -13,7 +13,7 @@ const Users: CollectionConfig = {
       name: "otp",
       admin: {
         hidden: false,
-        readOnly: true,
+        readOnly: false,
       },
       fields: [
         {

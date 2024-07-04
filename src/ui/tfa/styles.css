@@ -1,0 +1,44 @@
+.wrap {
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  aligh-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 400px;
+  background: #f9f9f9;
+  border-radius: 5px;
+  border: 1px solid #e0e0e0;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.header {
+  /* display: flex; */
+  font-size: 1.5rem;
+  text-align: center;
+  & a {
+    font-size: 1rem;
+  }
+}
+
+.secret {
+  font-family: monospace;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  & button {
+    margin: 0rem;
+  }
+
+  & input {
+    text-align: center;
+    font-family: monospace;
+    letter-spacing: 0.2rem;
+    font-size: 3rem;
+  }
+}

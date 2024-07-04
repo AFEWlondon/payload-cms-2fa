@@ -5,6 +5,7 @@ import { TextInput } from "payload/components/forms";
 import { Button } from "payload/components";
 import { verify } from "crypto";
 import QRCode from "react-qr-code";
+import "./styles.css";
 
 interface GetOTPResponse {
   otpauth_url: string;
@@ -76,13 +77,13 @@ const TFAPage = () => {
   }, []);
 
   return (
-    <div>
-      <div>
+    <div className="wrap">
+      <div className="header">
         <div>Hello, {user.email}</div>
-        <a href="/logout">Logout</a>
+        <a href="/admin/logout">Logout</a>
       </div>
       {user.otp?.otpVerified ? (
-        <div>
+        <div className="input">
           <TextInput
             name={"code"}
             path={"code"}
@@ -94,20 +95,21 @@ const TFAPage = () => {
           {invalidCode && <p>Code is invalid</p>}
         </div>
       ) : (
-        <div>
+        <div className="input">
           <QRCode
             value={optauthUrl}
             style={{
               padding: "20px",
               backgroundColor: "#fff",
+              margin: "0 auto",
             }}
           />
-          <span>Secret: {otpSecret}</span>
+          {/* <div className="secret">Secret: {otpSecret}</div> */}
           <TextInput
             name={"code"}
             path={"code"}
-            label="Code"
             value={code}
+            placeholder={"012345"}
             onChange={(e) => setCode(e.target.value)}
           />
           <Button onClick={sendVerify}>Confirm</Button>
