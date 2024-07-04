@@ -1,5 +1,4 @@
 import { CollectionConfig } from "payload/types";
-import GoogleAuthenticator from "passport-2fa-totp";
 
 const Users: CollectionConfig = {
   slug: "users",
