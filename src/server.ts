@@ -3,10 +3,8 @@ import payload from "payload";
 import apiRouter from "./api/root";
 
 require("dotenv").config();
-const app = express();
 
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.json());
+const app = express();
 
 app.get("/", (_, res) => {
   res.redirect("/admin");
