@@ -1,8 +1,3 @@
-.page {
-  background: var(--theme-elevation-1000);
-  height: 100vh;
-  padding: 2rem;
-}
 .wrap {
   margin: 0 auto;
   padding: 2rem;

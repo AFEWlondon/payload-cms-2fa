@@ -22,7 +22,7 @@ const TFAProvider: React.FC<TFAProviderProps> = (props) => {
       }
     }
   }, [token, user]);
-  return <main className="page">{props.children}</main>;
+  return <main>{props.children}</main>;
 };
 
 export default TFAProvider;
